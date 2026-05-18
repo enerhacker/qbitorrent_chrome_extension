@@ -190,13 +190,7 @@ Chrome bővítmény magnet és torrent linkek qBittorrent WebUI-ra küldéséhez
 
 ## Licenc
 
-Jelenleg nincs megadott licenc.
-
-Ha nyílt forráskódú projektként szeretnéd publikálni, ajánlott például:
-
-- MIT License
-- GPL-3.0 License
-- Apache-2.0 License
+MIT License
 
 ## Megjegyzés
 
