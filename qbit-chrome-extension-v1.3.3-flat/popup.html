@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="hu">
+<head>
+  <meta charset="utf-8">
+  <title>qBittorrent</title>
+  <link rel="icon" href="icons/icon32.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="popup">
+  <section class="card">
+    <div class="brand-header popup-brand">
+      <img src="icons/logo64.png" alt="qBittorrent icon" class="brand-logo small">
+      <div>
+        <h2 data-i18n="popupTitle">qBittorrent küldés</h2>
+        <p class="muted" data-i18n="popupLead">Link, magnet vagy kézi .torrent feltöltés.</p>
+      </div>
+    </div>
+
+    <label><span data-i18n="torrentUrl">Torrent / magnet URL</span>
+      <input id="url" placeholder="magnet:?xt=... vagy https://.../file.torrent">
+    </label>
+    <button id="sendUrl" data-i18n="sendUrl">URL küldése</button>
+
+    <hr>
+
+    <label><span data-i18n="chooseTorrent">.torrent fájl kiválasztása</span>
+      <input id="file" type="file" accept=".torrent,application/x-bittorrent">
+    </label>
+    <button id="sendFile" class="secondary" data-i18n="sendFile">Fájl feltöltése</button>
+
+    <div class="actions small-actions">
+      <button id="openOptions" class="linkbtn" data-i18n="openOptions">Beállítások</button>
+    </div>
+
+    <p id="status" class="status"></p>
+  </section>
+  <script src="i18n.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

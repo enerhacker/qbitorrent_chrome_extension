@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="hu">
+<head>
+  <meta charset="utf-8">
+  <title>qBittorrent Torrent Sender beállítások</title>
+  <link rel="icon" href="icons/icon32.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="page">
+    <section class="card wide">
+      <div class="brand-header">
+        <img src="icons/logo64.png" alt="qBittorrent icon" class="brand-logo">
+        <div>
+          <h1 data-i18n="appName">qBittorrent Torrent Sender</h1>
+          <p class="muted" data-i18n="optionsLead">Beállítások.</p>
+        </div>
+      </div>
+
+      <label><span data-i18n="language">Nyelv</span>
+        <select id="language"></select>
+      </label>
+
+      <label><span data-i18n="serverUrl">Szerver URL</span>
+        <input id="baseUrl" placeholder="http://192.168.2.115:8080">
+      </label>
+
+      <div class="grid">
+        <label><span data-i18n="username">Felhasználónév</span>
+          <input id="username" autocomplete="username">
+        </label>
+        <label><span data-i18n="password">Jelszó</span>
+          <div class="password-wrap">
+            <input id="password" type="password" autocomplete="current-password">
+            <button id="togglePassword" class="password-toggle" type="button" aria-label="Jelszó megjelenítése" title="Jelszó megjelenítése"></button>
+          </div>
+        </label>
+      </div>
+
+      <label><span data-i18n="authMode">Hitelesítési mód</span>
+        <select id="authMode">
+          <option value="auto" data-i18n="authAuto">Automatikus: meglévő böngészős session, majd WebUI login</option>
+        </select>
+      </label>
+
+      <label><span data-i18n="sendMode">Küldési mód</span>
+        <select id="sendMode">
+          <option value="bridge" data-i18n="sendBridge">Ajánlott: mindig qBittorrent WebUI fülből küldje</option>
+        </select>
+      </label>
+
+      <label><span data-i18n="savePath">Mentési útvonal, opcionális</span>
+        <input id="savePath" placeholder="pl. /downloads/torrent vagy D:\\Torrent">
+      </label>
+
+      <div class="checks">
+        <label><input id="autoIntercept" type="checkbox"><span data-i18n="autoIntercept">Torrent és magnet linkek automatikus figyelése kattintáskor</span></label>
+        <label><input id="interceptDownloads" type="checkbox"><span data-i18n="interceptDownloads">Chrome letöltések figyelése</span></label>
+        <label><input id="keepChromeDownload" type="checkbox"><span data-i18n="keepChromeDownload">A Chrome is töltse le</span></label>
+        <label><input id="uploadTorrentFile" type="checkbox"><span data-i18n="uploadTorrentFile">.torrent fájl háttérletöltése</span></label>
+        <label><input id="pageFetchTorrent" type="checkbox"><span data-i18n="pageFetchTorrent">Privát oldali mód</span></label>
+        <label><input id="fallbackSendUrl" type="checkbox"><span data-i18n="fallbackSendUrl">Hiba esetén URL-ként küldje</span></label>
+        <label><input id="paused" type="checkbox"><span data-i18n="paused">Hozzáadás szüneteltetve</span></label>
+        <label><input id="showNotifications" type="checkbox"><span data-i18n="showNotifications">Rendszerértesítések mutatása</span></label>
+        <label><input id="showToasts" type="checkbox"><span data-i18n="showToasts">Beúszó toast visszajelzés mutatása</span></label>
+        <label><input id="closeQbitTabAfterSend" type="checkbox"><span data-i18n="closeQbitTabAfterSend">Megnyitott qBittorrent fül bezárása</span></label>
+        <label><input id="closeExistingQbitTabAfterSend" type="checkbox"><span data-i18n="closeExistingQbitTabAfterSend">Már nyitva lévő qBittorrent fül bezárása</span></label>
+      </div>
+
+      <section class="subcard">
+        <h2 data-i18n="toastLook">Toast értesítés kinézete</h2>
+        <p class="muted" data-i18n="toastLead">Alapból a böngésző/rendszer témájához igazodik.</p>
+        <div class="grid">
+          <div class="toast-position-field" id="toastPosition">
+            <div class="field-title" data-i18n="toastPosition">Toast helye</div>
+            <div class="toast-position-grid" role="radiogroup" aria-label="Toast helye">
+              <label class="position-option">
+                <input type="radio" name="toastPositionOption" value="top-left">
+                <span data-i18n="posTopLeft">Bal felső</span>
+              </label>
+              <label class="position-option">
+                <input type="radio" name="toastPositionOption" value="top-right">
+                <span data-i18n="posTopRight">Jobb felső</span>
+              </label>
+              <label class="position-option">
+                <input type="radio" name="toastPositionOption" value="bottom-left">
+                <span data-i18n="posBottomLeft">Bal alsó</span>
+              </label>
+              <label class="position-option">
+                <input type="radio" name="toastPositionOption" value="bottom-right">
+                <span data-i18n="posBottomRight">Jobb alsó</span>
+              </label>
+            </div>
+          </div>
+          <label><span data-i18n="toastTheme">Toast téma</span>
+            <select id="toastTheme">
+              <option value="auto" data-i18n="themeAuto">Automatikus</option>
+              <option value="dark" data-i18n="themeDark">Sötét</option>
+              <option value="light" data-i18n="themeLight">Világos</option>
+              <option value="custom" data-i18n="themeCustom">Egyéni színek</option>
+            </select>
+          </label>
+        </div>
+        <div class="color-grid">
+          <label><span data-i18n="bg">Háttér</span><input id="toastBg" type="color"></label>
+          <label><span data-i18n="text">Szöveg</span><input id="toastText" type="color"></label>
+          <label><span data-i18n="success">Siker</span><input id="toastSuccess" type="color"></label>
+          <label><span data-i18n="error">Hiba</span><input id="toastError" type="color"></label>
+          <label><span data-i18n="warning">Figyelmeztetés</span><input id="toastWarning" type="color"></label>
+          <label><span data-i18n="info">Információ</span><input id="toastInfo" type="color"></label>
+        </div>
+
+        <div class="toast-preview-wrap">
+          <div class="toast-preview-title" data-i18n="livePreview">Élő előnézet</div>
+          <div id="toastPreviewBox" class="toast-preview-box">
+            <div id="toastPreviewTitle" class="toast-preview-heading">qBittorrent</div>
+            <div id="toastPreviewMessage" class="toast-preview-message">Toast próba: így fog kinézni a visszajelzés.</div>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button id="previewToast" class="secondary" type="button" data-i18n="previewToast">Toast próba</button>
+        </div>
+      </section>
+
+      <div class="actions">
+        <button id="save" data-i18n="save">Mentés</button>
+        <button id="test" class="secondary" data-i18n="test">Kapcsolat tesztelése</button>
+      </div>
+      <p id="status" class="status"></p>
+    </section>
+  </main>
+  <script src="i18n.js"></script>
+  <script src="options.js"></script>
+</body>
+</html>
